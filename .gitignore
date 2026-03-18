@@ -1,0 +1,80 @@
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Static libraries
+*.a
+*.lib
+
+# Shared libraries
+*.so
+*.dylib
+*.dll
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Build directories
+build/
+bin/
+out/
+dist/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+CMakeScripts/
+Testing/
+_deps/
+
+# Make
+*.make
+*.mk
+
+# IDE files
+# VS Code
+.vscode/
+
+# CLion / JetBrains
+.idea/
+
+# Visual Studio
+*.vcxproj*
+*.sln
+*.user
+*.opensdf
+*.sdf
+*.db
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# ignore files starting with numbers
+[0-9]*
+
+# but allow C++ source files
+!*.cpp
