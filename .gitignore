@@ -32,6 +32,7 @@ build/
 bin/
 out/
 dist/
+output/
 
 # CMake
 CMakeFiles/
