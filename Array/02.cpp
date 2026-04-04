@@ -9,17 +9,27 @@ void getElements(vector<int> arr) {
         return;
      }
 
-    sort(arr.begin(), arr.end());
+     int largest_elem = INT_MIN;
+     int smallest_elem = INT_MAX;
+     int secondlargest_elem = INT_MIN;
+     int secondsmallest_elem = INT_MAX;
 
-    // remove duplicates to handle cases like {1, 1, 2, 3}
-    arr.erase(unique(arr.begin(), arr.end()), arr.end());
+     for (int i = 0; i < arr.size(); i++) {
+        largest_elem = max(largest_elem, arr[i]);
+        smallest_elem = min(smallest_elem, arr[i]);
+     }
 
-    if (arr.size() == 1) {
-        cout << "-1" << " " << "-1" << endl;
-        return;
-    }
+     for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] > secondlargest_elem && arr[i] != largest_elem) {
+            secondlargest_elem = arr[i];
+        }
 
-    cout << arr[1] << " " << arr[arr.size() - 2] << endl;
+        if (arr[i] < secondsmallest_elem && arr[i] != smallest_elem) {
+            secondsmallest_elem = arr[i];
+        }
+     }
+
+     cout << secondlargest_elem << " " << secondsmallest_elem << endl;
 }
 
 int main() {
