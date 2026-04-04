@@ -73,6 +73,7 @@ _deps/
 *.tmp
 *.temp
 *.swp
+tempCodeRunnerFile.cpp
 
 # ignore files starting with numbers
 [0-9]*
