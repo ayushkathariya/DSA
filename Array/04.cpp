@@ -4,24 +4,20 @@ using namespace std;
 /* Remove the repeating elements in a sorted array */
 
 int remove_repelem(vector<int>& arr) {
-    int index = 0;
-    unordered_set<int> seen;
+    int i = 0;
 
-    for (int i = 0; i < arr.size(); i++) {
-        if (seen.find(arr[i]) == seen.end()) {
-            seen.insert(arr[i]);
-
-            arr[index] = arr[i];
-
-            index++;
+    for (int j = 1; j < arr.size(); j++) {
+        if (arr[i] != arr[j]) {
+            i++;
+            arr[i] = arr[j];
         }
     }
 
-    return index;
+    return i + 1;
 }
 
 int main() {
-    vector<int> arr = {1, 1, 2, 2, 3, 4, 4, 4};
+    vector<int> arr = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
     int count = remove_repelem(arr);
 
