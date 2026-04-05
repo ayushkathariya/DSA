@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Left rotate the arrray by one. */
+/* Left rotate the array by one. */
 
 void rotate_oneleft(vector<int> arr) {
     vector<int> temp(arr.size());
