@@ -4,17 +4,17 @@ using namespace std;
 /* Left rotate the array by one. */
 
 void rotate_oneleft(vector<int> arr) {
-    vector<int> temp(arr.size());
+    int temp = arr[0];
 
     for (int i = 1; i < arr.size(); i++) {
-        temp[i - 1] = arr[i];
+        arr[i - 1] = arr[i];
     }
 
-    temp[arr.size() - 1] = arr[0];
+    arr[arr.size() - 1] = temp;
 
     // output
-    for (int i = 0; i < temp.size(); i++) {
-        cout << temp[i] << endl;
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i] << endl;
     }
 }
 
