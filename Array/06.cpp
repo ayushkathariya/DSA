@@ -3,44 +3,36 @@ using namespace std;
 
 /* Rotate array by k elements */
 
-void rotate_arr(vector<int>& arr, int k, string rotate) {
-    if (rotate == "left") {
-        vector<int> temp(k);
+void reverse_array(vector<int>&  arr, int start, int end) {
+    while (start < end) {
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+}
 
-        for (int i = 0; i < k; i++) {
-            temp[i] = arr[i];
-        }
+void rotate_arr(vector<int>& arr, int k, string direction) {
+    if (direction == "left") {
+        reverse_array(arr, 0, arr.size() - 1);
 
-        for (int i = 0; i < arr.size() - k; i++) {
-            arr[i] = arr[i + k];
-        }
+        reverse_array(arr, arr.size() - k, arr.size() - 1);
 
-        for (int i = 0; i < temp.size(); i++) {
-            arr[arr.size() - k + i] = temp[i];
-        }
+        reverse_array(arr, 0 , arr.size() - k - 1);
     } else {
-        vector<int> temp(k);
+        reverse_array(arr, 0, arr.size() - 1);
 
-        for (int i = 0; i < k; i++) {
-            temp[i] = arr[arr.size() - k + i];
-        }
+        reverse_array(arr, 0, k - 1);
 
-        for (int i = arr.size() - k - 1; i >= 0; i--) {
-            arr[i + k] = arr[i];
-        }
-
-        for (int i = 0; i < k; i++) {
-            arr[i] = temp[i];
-        }
+        reverse_array(arr, k, arr.size() - 1);
     }
 }
 
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5, 6};
     int k = 2;
-    string rotate = "right";
+    string direction = "right";
 
-    rotate_arr(arr, k, rotate);
+    rotate_arr(arr, k, direction);
 
     // output 
     for (auto it : arr) {
