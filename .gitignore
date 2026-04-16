@@ -12,6 +12,10 @@
 *.x86_64
 *.hex
 
+# Test
+main.cpp
+main
+
 # Static libraries
 *.a
 *.lib
